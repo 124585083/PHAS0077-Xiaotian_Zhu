@@ -76,8 +76,30 @@ CNN.fit_it(train_images_l, train_labels_l)
 CNN.get_confusion(test_images_unl, test_labels_unl)
 
 # Perform the model with Resnet.
-Resnet = Model()
-Resnet.Choose_model('Resnet', (224,224,3))
-Resnet.compile_it()
-Resnet.fit_it(train_images_l, train_labels_l)
-Resnet.get_confusion(test_images_unl, test_labels_unl)
+Resnet50 = Model()
+Resnet50.Choose_model('Resnet50', (224,224,3))
+Resnet50.compile_it()
+Resnet50.fit_it(train_images_l, train_labels_l)
+Resnet50.get_confusion(test_images_unl, test_labels_unl)
+
+# Perform the model with Resnet.
+Resnet101 = Model()
+Resnet101.Choose_model('Resnet101', (224,224,3))
+Resnet101.compile_it()
+Resnet101.fit_it(train_images_l, train_labels_l)
+Resnet101.get_confusion(test_images_unl, test_labels_unl)
+
+# Perform the model with Resnet.
+Resnet152 = Model()
+Resnet152.Choose_model('Resnet152', (224,224,3))
+Resnet152.compile_it()
+Resnet152.fit_it(train_images_l, train_labels_l)
+Resnet152.get_confusion(test_images_unl, test_labels_unl)
+
+# Compare the result between labeled images and unlabeled images model.
+Resnet50_unl = Model()
+Resnet50_unl.Choose_model('Resnet50', (224,224,3))
+Resnet50_unl.compile_it()
+# With the unlabeled training set.
+Resnet50_unl.fit_it(train_images_unl, train_labels_unl)
+Resnet50_unl.get_confusion(test_images_unl, test_labels_unl)
