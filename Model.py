@@ -81,7 +81,7 @@ class Model:
     # The Resnet50 model, return a keras model.
     def Resnet_50(self):
         model = keras.Sequential([
-            keras.applications.Resnet50(input_shape=self.size),
+            keras.applications.ResNet50(input_shape=self.size),
             keras.layers.Dense(5, activation='softmax')
         ])
         return model
